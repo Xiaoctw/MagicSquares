@@ -119,6 +119,88 @@ public class MagicSquares {
         }
         return true;
     }
+//  //  public boolean isLegalMagiclirongji(String fileName) throws FileNotFoundException {
+//        File file = new File(fileName);
+//        FileInputStream fileInputStream=new FileInputStream(file);
+//        Scanner sc = new Scanner(fileInputStream);
+//        String[] numbers = new String[1000];
+//        int rows = 0;
+//        int i,j;
+//        while(sc.hasNextLine())
+//        {
+//            numbers[rows] = sc.nextLine();
+//            rows++;
+//        }
+//        sc.close();
+//        String [][] square = new String[rows][];
+//        for(i = 0;i<rows;i++)
+//        {
+//            square[i] = numbers[i].split("\t");
+//        }
+//        for(i = 0;i<rows;i++)
+//        {
+//            for(j = 0;j<square[i].length;j++)
+//            {
+//                Pattern pattern = Pattern.compile("[0-9]*");
+//                Matcher isNum = pattern.matcher(square[i][j]);
+//                if( !isNum.matches() )
+//                {
+//                    return false;
+//                }
+//            }
+//        }
+//        int leng = square[0].length;
+//        if(rows != leng)
+//            return false;
+//        for(i = 1;i<rows;i++)
+//        {
+//            if(square[i].length!=leng)
+//                return false;
+//        }
+//        int[][] magicSquare = new int[1000][1000];
+//        for(i = 0;i<rows;i++)
+//        {
+//            for(j = 0;j<square[i].length;j++)
+//            {
+//                magicSquare[i][j] = Integer.parseInt(square[i][j]);
+//                if(magicSquare[i][j] == 0)
+//                    return false;
+//            }
+//        }
+//        int standardSum = 0;
+//        int sum = 0;
+//        for(j = 0;j<magicSquare[0].length;j++)
+//        {
+//            standardSum += magicSquare[0][j];
+//        }
+//        for(i = 1;i<rows;i++)
+//        {
+//            sum = 0;
+//            for(j = 0;j<magicSquare[i].length;j++)
+//                sum += magicSquare[i][j];
+//            if(sum != standardSum)
+//                return false;
+//        }
+//        for(j = 0;j<magicSquare[0].length;j++)
+//        {
+//            sum = 0;
+//            for(i = 0;i<rows;i++)
+//                sum += magicSquare[j][i];
+//            if(sum != standardSum)
+//                return false;
+//        }
+//        sum =0;
+//        for(i = 0;i<rows;i++)
+//            sum += magicSquare[i][i];
+//        if(sum != standardSum)
+//            return false;
+//        sum = 0;
+//        for(i = rows-1;i>=0;i--)
+//            sum += magicSquare[i][i];
+//        if(sum != standardSum)
+//            return false;
+//        return true;
+//    }
     public static boolean generateMagicSquare(int n) {
         int [][]magic=new int[n][n];
         int row=0,col=n/2,i,j,square=n*n;
@@ -147,13 +229,15 @@ public class MagicSquares {
         }
         return true;
     }
-    public void test(int a[][]){
+    public void test(int a[][]) throws FileNotFoundException {
         for (int i = 0; i <a.length ; i++) {
             for (int j = 0; j <a[i].length ; j++) {
                 System.out.print(a[i][j]+" ");
             }
             System.out.println();
         }
+        File file=new File("1.txt");
+  //      Boolean result=isLegalMagiclirongji("1.txt");
     }
 }
 
